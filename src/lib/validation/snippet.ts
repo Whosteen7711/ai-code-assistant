@@ -26,11 +26,6 @@ export const deleteSnippetSchema = z.object({
   id: z.string().min(1),
 })
 
-// TODO: compute cost of prompt with content to determine subscription level
-// low tier: 1 prompt per day (free)
-// mid tier: 5 prompts per day (paid)
-// high tier: unlimited prompts per day (paid)
-
 // export validation scheme type
 // types not required for update and delete since they are not used in a form
 export type CreateSnippetSchema = z.infer<typeof createSnippetSchema>

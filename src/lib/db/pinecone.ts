@@ -5,10 +5,15 @@ const apiKey = process.env.PINECONE_API_KEY
 if (!apiKey) {
   throw new Error('PINECONE_API_KEY is not set')
 }
+const pineconeIndexName = process.env.PINECONE_INDEX_NAME
+
+if (!pineconeIndexName) {
+  throw new Error('PINECONE_INDEX_NAME is not set')
+}
 
 const pinecone = new Pinecone({
   environment: 'gcp-starter',
   apiKey,
 })
 
-export const snippetsIndex = pinecone.Index('ai-coder')
+export const snippetsIndex = pinecone.Index(pineconeIndexName)

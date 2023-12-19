@@ -22,6 +22,5 @@ export async function getEmbeddings(text: string) {
     throw new Error('No embedding returned')
   }
 
-  console.log(embeddings)
   return embeddings
 }
